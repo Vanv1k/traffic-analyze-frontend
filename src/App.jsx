@@ -13,12 +13,8 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-50 flex">
-        {/* Боковое меню */}
         <Sidebar></Sidebar>
-        
-        {/* Основное содержимое */}
         <div className="flex-1 flex flex-col overflow-hidden">
-          {/* Верхняя панель для мобильных */}
           <header className="bg-white shadow-sm md:hidden z-20">
             <div className="flex items-center justify-between px-4 py-3">
               <button 
@@ -33,7 +29,6 @@ function App() {
               <div className="w-6"></div>
             </div>
           </header>
-          {/* Контент */}
           <main className="flex-1 overflow-y-auto p-6 bg-gray-50">
             <div className="max-w-6xl mx-auto">
               <Routes>

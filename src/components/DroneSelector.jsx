@@ -20,13 +20,13 @@ function DroneSelector({ setSelectedDrone }) {
 
   return (
     <div className="mb-6 bg-white p-6 rounded-lg shadow-md">
-      <label className="block text-gray-800 font-medium mb-2">Select Drone</label>
+      <label className="block text-gray-800 font-medium mb-2">Выберете дрон</label>
       <select
         value={selected}
         onChange={handleSelect}
         className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
       >
-        <option value="">Choose a drone</option>
+        <option value="">Список дронов</option>
         {drones.map(drone => (
           <option key={drone.drone_id} value={drone.drone_id}>{drone.drone_name}</option>
         ))}

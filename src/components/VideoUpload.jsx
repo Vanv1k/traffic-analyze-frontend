@@ -27,7 +27,6 @@ function VideoUpload({ droneId }) {
     formData.append('file', file);
 
     try {
-      // 1. Загрузка файла
       const uploadResponse = await axios.post('http://localhost:8000/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
         onUploadProgress: (progressEvent) => {
@@ -41,7 +40,6 @@ function VideoUpload({ droneId }) {
       setMessage('Видео загружено. Начата обработка...');
       
       if (uploadResponse.data.mission_id) {
-        // 2. Отслеживание обработки
         trackProcessing(uploadResponse.data.mission_id);
       }
     } catch (error) {
@@ -52,14 +50,12 @@ function VideoUpload({ droneId }) {
 
   const trackProcessing = async (missionId) => {
     try {
-      // Эмулируем прогресс обработки
       let progress = 0;
       const progressInterval = setInterval(() => {
         progress = Math.min(progress + Math.random() * 10, 95);
         setUploadProgress(progress);
       }, 1000);
 
-      // Проверяем готовность видео
       const checkVideo = async () => {
         try {
           const videoUrl = `http://localhost:8000/processed-video/${missionId}`;

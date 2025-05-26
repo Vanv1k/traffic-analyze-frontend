@@ -25,15 +25,12 @@ function DroneForm() {
 
   return (
   <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-4" style={{ minHeight: 'calc(100dvh - 160px)' }}>
-      <div className="max-w-md mx-auto my-8"> {/* Убрал flex и добавил margin */}
+      <div className="max-w-md mx-auto my-8"> 
         <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-          {/* Заголовок */}
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6">
             <h2 className="text-2xl font-bold text-white">Добавить новый дрон</h2>
             <p className="text-blue-100 mt-1">Заполните информацию о дроне</p>
           </div>
-
-          {/* Форма */}
           <form onSubmit={handleSubmit} className="p-6 space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
